@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <script type="text/javascript">
+    function calculate(res)
+    {
+        calculator.dis.value = calculator.dis.value+res;
+    }
+    function clr()
+    {
+        calculator.dis.value="";
+    }
+    </script>
+    <style type="text/css">
+    body,html {
+    background: linear-gradient(to bottom, #33ccff 0%, #ff99cc 100%);
+    margin: 0;
+    padding: 0;
+}
+.container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: white;
+    box-shadow: 10px 10px 10px 10px lightgreen;
+    border-radius: 14px;
+    padding-bottom: 20px;
+    width: 280px;
+}
+.display {
+    width: 100%;
+    height: 60px;
+    padding: 40px 0;
+    background: lightgreen;
+    border-top-left-radius: 14px;
+    border-top-right-radius: 14px;
+}
+.row {
+    width: 280px;
+    float: left;
+}
+input[type=button] {
+    width: 60px;
+    height: 60px;
+    float: left;
+    padding: 0;
+    margin: 5px;
+    box-sizing: border-box;
+    background: #ecedef;
+    border: none;
+    font-size: 30px;
+     font-size: 30px;
+     font-weight: 700;
+    color: #5E5858;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 5px 5px 5px 5px lightgreen;
+}
+input[type=text] {
+    width: 270px;
+    height: 60px;
+    float: left;
+    padding: 0;
+    margin: 0 25px;
+    box-sizing: border-box;
+    background: none;
+    border: none;
+    font-size: 60px;
+    line-height: 60px;
+    font-weight: 700;
+    color:red;
+    text-align: right;
+}
+.red {
+    background: red !important;
+    color: #ffffff !important;
+}
+    </style>
+</head>
+<body>
+    <form name = "calculator">
+        <table class = "container">
+            <tr>
+                <td class = "display">
+                    <input type="text" name="dis" placeholder="0">
+                </td>
+            </tr>
+            <tr class ="row">
+                <td><input type="button" name="openbracket" value="(" onclick="calculate(openbracket.value)"></td>
+                <td><input type="button" name="modules" value="%" onclick="calculate(modules.value)"></td>
+                <td><input type="button" name="dot" value="." onclick="calculate(dot.value)"></td>
+                <td><input type="button" name="closebracket" value=")" onclick="calculate(closebracket.value)"></td>
+
+            <tr class ="row">
+                <td><input type="button" name="seven" value="7" onclick="calculate(seven.value)"></td>
+                <td><input type="button" name="eight" value="8" onclick="calculate(eight.value)"></td>
+                <td><input type="button" name="nine" value="9" onclick="calculate(nine.value)"></td>
+                <td><input type="button" name="add" value="+" onclick="calculate(add.value)"></td>
+            </tr>
+            <tr class ="row">
+                <td><input type="button" name="four" value="4" onclick="calculate(four.value)"></td>
+                <td><input type="button" name="five" value="5" onclick="calculate(five.value)"></td>
+                <td><input type="button" name="six" value="6" onclick="calculate(six.value)"></td>
+                <td><input type="button" name="sub" value="-" onclick="calculate(sub.value)"></td>
+            </tr>
+            <tr class ="row">
+                <td><input type="button" name="one" value="1" onclick="calculate(one.value)"></td>
+                <td><input type="button" name="two" value="2" onclick="calculate(two.value)"></td>
+                <td><input type="button" name="three" value="3" onclick="calculate(three.value)"></td>
+                <td><input type="button" name="mul" value="*" onclick="calculate(mul.value)"></td>
+            </tr>
+            <tr class ="row">
+                <td><input type="button" name="zero" value="0" onclick="calculate(zero.value)"></td>
+                <td><input type="button" name="div" value="/" onclick="calculate(div.value)"></td>
+                <td><input type="button" name="c" value="C" onclick="clr();"></td>
+                <td><input type="button" class= "red" value ="=" onclick="dis.value=eval(dis.value)"></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
